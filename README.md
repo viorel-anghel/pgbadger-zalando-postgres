@@ -7,7 +7,7 @@ You will need to make changes in the `pgdbager.yaml` file which offered here as 
 1. edit `pgdbager.yaml` - adjust the `namespace` (change from `namespace: apigateway-dev`)
 2. edit `pgdbager.yaml` - `nodeName` must be the same as the one where the postgres master is running (because pvc accessModes ReadWriteOnce). get the nodeName with something like:
 ```
-# kubectl -n <NAMESPACA> get pod <PG_MASTER_POD_NAME> -o jsonpath='{.spec.nodeName}'; echo
+# kubectl -n <NAMESPACE> get pod <PG_MASTER_POD_NAME> -o jsonpath='{.spec.nodeName}'; echo
 
 # for example, where i'm testing this is:
 kubectl -n apigateway-dev get pod apigateway-dev-minimal-cluster-0 -o jsonpath='{.spec.nodeName}'; echo
