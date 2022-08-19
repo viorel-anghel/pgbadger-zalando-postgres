@@ -13,7 +13,7 @@ You will need to make changes in the `pgdbager.yaml` file which offered here as 
 kubectl -n apigateway-dev get pod apigateway-dev-minimal-cluster-0 -o jsonpath='{.spec.nodeName}'; echo
           # ^- your namespace     # ^- your postgres master pod
 ```
-3. edit `pgdbager.yaml` - persistentVolumeClaim must be the same as the one used by the postgres master pod. a command like this one might be used:
+3. edit `pgdbager.yaml` - persistentVolumeClaim must be the same as the one used by the postgres master pod. a command like this one may be used to get it:
 ```
 # kubectl -n <NAMESPACE> get pod <PG_MASTER_POD_NAME> -o jsonpath='{.spec.volumes[0].persistentVolumeClaim.claimName}'; echo
 
