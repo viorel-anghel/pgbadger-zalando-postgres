@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pgbadger
+  namespace: apigateway-dev
+spec:
+  containers:
+  - name: pgbadger
+    image: vvang/pgbadger:0.1
+    resources:
+      limits:
+        cpu: "1"
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 100Mi
+    volumeMounts:
+    - mountPath: /pgdata
+      name: pgdata
+  nodeName: rm1w6
+  volumes:
+  - name: pgdata
+    persistentVolumeClaim:
+      claimName: pgdata-apigateway-dev-minimal-cluster-0
+
