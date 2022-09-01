@@ -1,6 +1,6 @@
 # Using pgbadger in Kubernetes with Zalando Postgres operator
 
-You may use my container image from `vvang/pgbadger:0.1` (see https://hub.docker.com/repository/docker/vvang/pgbadger )
+You may use my container image from `vvang/pgbadger:0.3` (see https://hub.docker.com/repository/docker/vvang/pgbadger )
 or build your own. `Dockerfile` is in this repo for your reference.
 
 You will need to make changes in the `pgdbager.yaml` file which offered here as an example:
